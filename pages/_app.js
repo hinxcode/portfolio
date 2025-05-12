@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
 import { prismDarkTheme } from '../styles/prism'
+
 const GlobalStyle = ({ children }) => {
   return (
     <>

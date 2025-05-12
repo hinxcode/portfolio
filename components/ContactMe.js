@@ -1,4 +1,4 @@
-import { Link, Button, chakra, Heading, Stack, Text } from '@chakra-ui/react'
+import { Link, Button, Heading, Stack, Text } from '@chakra-ui/react'
 import useMediaQuery from '../hook/useMediaQuery'
 import { FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa'
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
@@ -16,30 +16,22 @@ export default function ContactMe({ contactMe }) {
     <Stack alignItems="center" justifyContent="center" w="100%" spacing={10}>
       <SlideUpWhenVisible>
         <Heading fontSize={{ base: '4xl', md: '5xl' }} textAlign="center">
-          Keep In Touch.
+          Let's Keep in Touch.
         </Heading>
       </SlideUpWhenVisible>
 
       <SlideUpWhenVisible>
         <Text color="textSecondary" fontSize="md" textAlign="center">
-          {contactMe[0].fields.title}{' '}
-          <chakra.span
-            color="button1"
-            display={{ base: 'block', md: 'inline' }}
-          >
-            {' '}
-            {contactMe[0].fields.highlightText}
-          </chakra.span>
-          .
+          Stay updated on my latest projects, insights, and offerings.
           <br />
-          {contactMe[0].fields.description}
+          Whether you have questions, need advice, or just want to chat, don't hesitate to reach out!
         </Text>
       </SlideUpWhenVisible>
 
       <SlideUpWhenVisible>
         <Stack isInline spacing={4}>
           <Link
-            href="https://linkedin.com/in/abdulrcs"
+            href="https://linkedin.com/in/ying-hsiang-huang"
             isExternal
             onClick={() => handleClick('contact_linkedin')}
           >
@@ -53,7 +45,7 @@ export default function ContactMe({ contactMe }) {
             </Button>
           </Link>
           <Link
-            href="mailto:abdulrcs1@gmail.com"
+            href="mailto:hincode@gmail.com"
             isExternal
             onClick={() => handleClick('contact_email')}
           >
@@ -68,7 +60,7 @@ export default function ContactMe({ contactMe }) {
             </Button>
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1IvhcdThnfMAcPEHy6Yvq4o8vSaIi_ArV/view?usp=sharing"
+            href="https://drive.google.com/file/d/1q30rLGfMpN71GxjZLjpysgq31Nn-N3_S/view?usp=sharing"
             isExternal
             onClick={() => handleClick('contact_resume')}
           >
