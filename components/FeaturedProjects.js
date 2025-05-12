@@ -93,10 +93,10 @@ export default function FeaturedProjects({ projects }) {
           </SlideUpWhenVisible>
           <SlideUpWhenVisible threshold={0.8}>
             <Cards
-              slug={projects[0].frontmatter.slug}
-              desc={projects[0].frontmatter.summary}
-              imageURL={projects[0].frontmatter.image}
-              title={projects[0].title}
+              slug={projects[2].frontmatter.slug}
+              desc={projects[2].frontmatter.summary}
+              imageURL={projects[2].frontmatter.image}
+              title={projects[2].title}
             />
           </SlideUpWhenVisible>
         </SimpleGrid>
