@@ -75,15 +75,15 @@ export default function AboutMe() {
               <br />
               My journey began as a
               <MoreInfo
-                text="software engineer and team lead"
-                content="My 6 years of hands-on development experience enable me to bridge technical and business needs with ease."
+                text="software engineer"
+                content="My years of hands-on development experience enable me to bridge technical and business needs with ease."
               />
               in eCommerce industry, where I developed robust technical & leadership skills by building scalable eCommerce systems and leading a team of 15+ engineers.
               <br />
               <br />
               At the University of Washington, I integrated my MLIS background with practical
               <MoreInfo
-                text="data science and machine learning"
+                text="machine learning"
                 content={
                   <>
                     Leveraged machine learning and deep learning in projects such as CRM-RFM analysis, BERT-based sentiment classification, and generative AI model evaluation.
@@ -98,9 +98,10 @@ export default function AboutMe() {
                 text="linked data specialist"
                 content={
                   <>
-                    <b>MARC2RDA Ontology Transformation:</b> Developed ontology-based mappings to convert MARC21 bibliographic data into RDF/OWL, implemented SPARQL validation, and aligned metadata with schema.org and BIBFRAME standards.<br />
-                    <b>Wikibase Suite Knowledge Graph Implementation:</b> Established a linked data environment, developed custom SPARQL queries, and evaluated data modeling strategies for complex ontology alignment and knowledge representation.<br />
-                    <a href="https://github.com/uwlib-cams/MARC2RDA" target="_blank" rel="noopener noreferrer">MARC2RDA Project Repo</a>
+                    <b>MARC2RDA:</b> Developed ontology-based mappings to convert MARC21 bibliographic data into RDF/OWL, implemented SPARQL validation, and aligned metadata with schema.org and BIBFRAME standards.
+                    <br />
+                    <br />
+                    <b>Wikibase Suite:</b> Established a linked data environment, developed custom SPARQL queries, and evaluated data modeling strategies for complex ontology alignment and knowledge representation.
                   </>
                 }
               />
@@ -112,17 +113,6 @@ export default function AboutMe() {
               <br />
               <br />
               I thrive in collaborative, cross-functional environments, and am committed to advancing ontology best practices!
-              {/* <MoreInfo
-                content={
-                  <Image
-                    w={306}
-                    h={102}
-                    alt="linkedin Qneksi"
-                    src="https://imagizer.imageshack.com/a/img923/541/alNCHs.png"
-                  />
-                }
-                text="Recruitment Company"
-              /> */}
             </Text>
           </Stack>
         </SlideUpWhenVisible>
@@ -149,7 +139,7 @@ export default function AboutMe() {
                 objectFit="cover"
                 borderRadius="50%"
                 alt=""
-                src="https://i.imgur.com/KAsWu6V.png"
+                src="https://i.imgur.com/y9NnIRI.png"
               />
             </Box>
           </Flex>

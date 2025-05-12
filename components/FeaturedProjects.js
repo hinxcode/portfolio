@@ -75,7 +75,7 @@ export default function FeaturedProjects({ projects }) {
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Cards
-              slug={projects[0].frontmatter.slug}
+              slug={projects[0].labels.slug[0]}
               desc={projects[0].frontmatter.summary}
               imageURL={projects[0].frontmatter.image}
               title={projects[0].title}
@@ -84,7 +84,7 @@ export default function FeaturedProjects({ projects }) {
           <SlideUpWhenVisible>
             <Box mt={{ md: '-50%' }}>
               <Cards
-                slug={projects[1].frontmatter.slug}
+                slug={projects[1].labels.slug[0]}
                 desc={projects[1].frontmatter.summary}
                 imageURL={projects[1].frontmatter.image}
                 title={projects[1].title}
@@ -93,7 +93,7 @@ export default function FeaturedProjects({ projects }) {
           </SlideUpWhenVisible>
           <SlideUpWhenVisible threshold={0.8}>
             <Cards
-              slug={projects[2].frontmatter.slug}
+              slug={projects[2].labels.slug[0]}
               desc={projects[2].frontmatter.summary}
               imageURL={projects[2].frontmatter.image}
               title={projects[2].title}

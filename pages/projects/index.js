@@ -53,7 +53,7 @@ export default function Projects({ projects }) {
                   desc={project.frontmatter.summary}
                   imageURL={project.frontmatter.image}
                   title={project.title}
-                  slug={project.frontmatter.slug}
+                  slug={project.labels.slug[0]}
                 />
               ))}
           </SimpleGrid>

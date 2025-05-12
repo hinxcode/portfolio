@@ -186,7 +186,7 @@ export async function getStaticPaths() {
 
   return {
     paths: data.edges.map(({ post }) => ({
-      params: { slug: post.frontmatter.slug },
+      params: { slug: post.labels.slug[0] },
     })),
     fallback: false,
   }
@@ -201,7 +201,7 @@ export async function getStaticProps({ params }) {
     query: {
       author: 'hinxcode',
       type: 'project',
-      search: params.slug,
+      search: `label:slug:${params.slug}`,
     },
   })
 
