@@ -20,6 +20,8 @@ export default function FeaturedProjects({ projects }) {
     })
   }
 
+  console.log('FUCKCKKK', projects[0])
+
   return (
     <>
       <Stack spacing={8} w="full">
@@ -73,31 +75,28 @@ export default function FeaturedProjects({ projects }) {
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Cards
-              slug={projects[0].fields.slug}
-              desc={projects[0].fields.description}
-              imageURL={projects[0].fields.imageUrl}
-              tag={projects[0].fields.tags}
-              title={projects[0].fields.title}
+              slug={projects[0].frontmatter.slug}
+              desc={projects[0].frontmatter.summary}
+              imageURL={projects[0].frontmatter.image}
+              title={projects[0].title}
             />
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Box mt={{ md: '-50%' }}>
               <Cards
-                slug={projects[1].fields.slug}
-                desc={projects[1].fields.description}
-                imageURL={projects[1].fields.imageUrl}
-                tag={projects[1].fields.tags}
-                title={projects[1].fields.title}
+                slug={projects[1].frontmatter.slug}
+                desc={projects[1].frontmatter.summary}
+                imageURL={projects[1].frontmatter.image}
+                title={projects[1].title}
               />
             </Box>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible threshold={0.8}>
             <Cards
-              slug={projects[2].fields.slug}
-              desc={projects[2].fields.description}
-              imageURL={projects[2].fields.imageUrl}
-              tag={projects[2].fields.tags}
-              title={projects[2].fields.title}
+              slug={projects[0].frontmatter.slug}
+              desc={projects[0].frontmatter.summary}
+              imageURL={projects[0].frontmatter.image}
+              title={projects[0].title}
             />
           </SlideUpWhenVisible>
         </SimpleGrid>

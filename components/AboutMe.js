@@ -70,17 +70,49 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Hey! I'm Abdul Rahman, I've been close to a computer since an
-              early age, and been passionate about it ever since. <br />
-              <br /> I really liked to build stuff using{' '}
+              Hey! I'm Ying Hsiang, an AI-driven ontologist with a strong foundation in software engineering and a passion for building knowledge-based solutions that drive real-world impact.
+              <br />
+              <br />
+              My journey began as a
               <MoreInfo
-                content="I used to make games without code using RPG Maker VX, and build a simple website with blogspot back in primary school."
-                text="no-code tools"
+                text="software engineer and team lead"
+                content="My 6 years of hands-on development experience enable me to bridge technical and business needs with ease."
               />
-              back in 2010, and from that, I explored how to code myself,
-              fast-forward to today, I do programming in various languages and
-              technologies, and had the privilege to worked in a{' '}
+              in eCommerce industry, where I developed robust technical & leadership skills by building scalable eCommerce systems and leading a team of 15+ engineers.
+              <br />
+              <br />
+              At the University of Washington, I integrated my MLIS background with practical
               <MoreInfo
+                text="data science and machine learning"
+                content={
+                  <>
+                    Leveraged machine learning and deep learning in projects such as CRM-RFM analysis, BERT-based sentiment classification, and generative AI model evaluation.
+                  </>
+                }
+              />
+              skills, enabling me to design and implement intelligent, data-driven solutions.
+              <br />
+              <br />
+              As a
+              <MoreInfo
+                text="linked data specialist"
+                content={
+                  <>
+                    <b>MARC2RDA Ontology Transformation:</b> Developed ontology-based mappings to convert MARC21 bibliographic data into RDF/OWL, implemented SPARQL validation, and aligned metadata with schema.org and BIBFRAME standards.<br />
+                    <b>Wikibase Suite Knowledge Graph Implementation:</b> Established a linked data environment, developed custom SPARQL queries, and evaluated data modeling strategies for complex ontology alignment and knowledge representation.<br />
+                    <a href="https://github.com/uwlib-cams/MARC2RDA" target="_blank" rel="noopener noreferrer">MARC2RDA Project Repo</a>
+                  </>
+                }
+              />
+              at the UW Libraries, I focused on knowledge representation, data modeling, and large-scale data transformation.
+              <br />
+              <br />
+              My current research leveraging multimodal embeddings for semantic search across large-scale digital collections,
+              and developing RAG pipelines for LLMs at the UW eScience Institute.
+              <br />
+              <br />
+              I thrive in collaborative, cross-functional environments, and am committed to advancing ontology best practices!
+              {/* <MoreInfo
                 content={
                   <Image
                     w={306}
@@ -90,38 +122,7 @@ export default function AboutMe() {
                   />
                 }
                 text="Recruitment Company"
-              />
-              and a
-              <MoreInfo
-                content={
-                  <Image
-                    w={306}
-                    h={102}
-                    alt="linkedin Qasir"
-                    src="https://imagizer.imageshack.com/a/img922/6137/c0cugn.png"
-                  />
-                }
-                text="SaaS Company"
-              />
-              I'm interested in building something awesome with code and
-              automate tasks with code, currently focused on
-              <MoreInfo
-                content="Building Web and Mobile Applications using Javascript Frameworks (React, React Native and Next.js)"
-                text="Web & Mobile Development,"
-              />
-              <MoreInfo
-                content="I really like the idea of contributing new features to open source projects that can be useful to other people."
-                text="Open Source"
-              />
-              and
-              <MoreInfo
-                content="Competitive Programming helped me to sharpen my Algorithms and Problem Solving skills."
-                text="Competitive Programming"
-              />
-              <br />
-              <br />
-              When I'm not coding I play games with my friends, watch some show
-              on Netflix, or if the weather's good, play basketball! 🏀
+              /> */}
             </Text>
           </Stack>
         </SlideUpWhenVisible>
@@ -147,8 +148,8 @@ export default function AboutMe() {
                 h={{ base: '300px', lg: '350px' }}
                 objectFit="cover"
                 borderRadius="50%"
-                alt="Abdul Rahman"
-                src="https://i.imgur.com/jk8NmSx.jpeg"
+                alt=""
+                src="https://i.imgur.com/KAsWu6V.png"
               />
             </Box>
           </Flex>

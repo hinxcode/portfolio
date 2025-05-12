@@ -1,48 +1,30 @@
 import {
   Box,
-  Center,
   Divider,
   HStack,
   Heading,
   Link,
-  Spinner,
   Stack,
   Text,
 } from '@chakra-ui/react'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { useEffect, useState } from 'react'
-
-import ReactGA from 'react-ga4'
-
-import mdxPrism from 'mdx-prism'
-
-import readingTime from 'reading-time'
-
+import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import { FaGithub, FaLink } from 'react-icons/fa'
+import ReactGA from 'react-ga4'
+import mdxPrism from 'mdx-prism'
+import readingTime from 'reading-time'
+import { GithubBlog } from '@rena.to/github-blog'
 import Container from '../../components/Container'
 import MDXComponents from '../../components/MDXComponents'
 import ProjectContainer from '../../components/ProjectContainer'
 
-import { GithubBlog } from '@rena.to/github-blog'
-
-import { FaGithub, FaLink, FaPersonBooth, FaUser } from 'react-icons/fa'
-import NextSeoData from '../../components/NextSeoData'
-import useUtterances from '../../hook/useUtterances'
-import Image from 'next/image'
-
 export default function Post({ metadata, publishedDate, source, toc }) {
-  const [views, setViews] = useState('...')
-
   const router = useRouter()
-  const { slug } = router.query
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${slug}`)
-      .then((res) => res.json())
-      .then((json) => setViews(json.views))
-  }, [slug])
-
   const [activeId, setActiveId] = useState()
+
   useEffect(() => {
     const handleScroll = () => {
       let currentId
@@ -73,16 +55,8 @@ export default function Post({ metadata, publishedDate, source, toc }) {
     })
   }
 
-  const { isCommentsLoading } = useUtterances('comments', metadata.title)
-
   return (
     <>
-      <NextSeoData
-        slug={slug}
-        metadata={metadata}
-        publishedDate={publishedDate}
-      />
-
       <Container>
         <Stack>
           <Stack
@@ -118,24 +92,18 @@ export default function Post({ metadata, publishedDate, source, toc }) {
               {metadata.frontmatter.summary}
             </Text>
             <HStack spacing={2}>
-              <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>
-                {views} views
-              </Text>
               {metadata.frontmatter.githubLink && (
-                <>
-                  <Text>-</Text>
-                  <HStack alignItems="center">
-                    <FaGithub fontSize="20px" />
-                    <Link
-                      fontSize={['xs', 'xs', 'sm', 'sm']}
-                      href={metadata.frontmatter.githubLink}
-                      isExternal
-                      onClick={() => handleClick(`${metadata.title}_github`)}
-                    >
-                      Github
-                    </Link>
-                  </HStack>
-                </>
+                <HStack alignItems="center">
+                  <FaGithub fontSize="20px" />
+                  <Link
+                    fontSize={['xs', 'xs', 'sm', 'sm']}
+                    href={metadata.frontmatter.githubLink}
+                    isExternal
+                    onClick={() => handleClick(`${metadata.title}_github`)}
+                  >
+                    Github
+                  </Link>
+                </HStack>
               )}
 
               {metadata.frontmatter.deployLink && (
@@ -154,12 +122,6 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                   </HStack>
                 </>
               )}
-            </HStack>
-            <HStack>
-              <FaUser fill="#D1D5DB" fontSize="14px" />
-              <Text color="#D1D5DB" fontSize={['xs', 'xs', 'sm', 'sm']}>
-                {metadata.frontmatter.category}
-              </Text>
             </HStack>
           </Stack>
 
@@ -202,34 +164,20 @@ export default function Post({ metadata, publishedDate, source, toc }) {
             ))}
           </Stack>
         </HStack>
-
-        <Stack w="100%" mt="36px" mb="15vh">
-          {isCommentsLoading && (
-            <Center flexDir="column" pt={8}>
-              <Spinner w="56px" h="56px" color="#058d92" thickness="5px" />
-              <Text pt={2} color="textSecondary" fontSize="sm">
-                Loading comments...
-              </Text>
-            </Center>
-          )}
-          <Stack opacity={isCommentsLoading ? 0 : 1}>
-            <div id="comments" />
-          </Stack>
-        </Stack>
       </Container>
     </>
   )
 }
 
 export async function getStaticPaths() {
-  const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+  const projects = new GithubBlog({
+    repo: 'hinxcode/portfolio',
     token: process.env.GITHUB_TOKEN,
   })
 
-  const data = await blog.getPosts({
+  const data = await projects.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'hinxcode',
       type: 'project',
       state: 'published',
     },
@@ -245,13 +193,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+  const projects = new GithubBlog({
+    repo: 'hinxcode/portfolio',
     token: process.env.GITHUB_TOKEN,
   })
-  const data = await blog.getPost({
+  const data = await projects.getPost({
     query: {
-      author: 'abdulrcs',
+      author: 'hinxcode',
       type: 'project',
       search: params.slug,
     },
@@ -265,7 +213,9 @@ export async function getStaticProps({ params }) {
 
   const article = data.post
   const source = article.body
+
   article.readingTime = readingTime(source).text
+
   const mdxSource = await serialize(source, {
     mdxOptions: {
       rehypePlugins: [mdxPrism],

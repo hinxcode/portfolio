@@ -11,6 +11,7 @@ import {
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
 import useMediaQuery from '../hook/useMediaQuery'
 import ReactGA from 'react-ga4'
+import TypingEffect from './TypingEffect'
 
 export default function Introduction({ introduction }) {
   const isLargerThan800 = useMediaQuery(800)
@@ -20,6 +21,14 @@ export default function Introduction({ introduction }) {
       action: event,
     })
   }
+
+  const roles = [
+    "Programmer.",
+    "Linked Data Specialist.",
+    "Software Engineer.",
+    "Researcher.",
+    "Frontend Engineer.",
+  ]
 
   return (
     <Stack
@@ -51,7 +60,7 @@ export default function Introduction({ introduction }) {
             fontSize="display2"
             fontWeight="medium"
           >
-            Hey there!, I'm-
+            Hi there!, I'm
           </Text>
         </Box>
         <Heading
@@ -62,7 +71,7 @@ export default function Introduction({ introduction }) {
           lineHeight={'95%'}
           letterSpacing={{ sm: '-1.2px', md: '-1.8px' }}
         >
-          Abdul Rahman.
+          Ying Hsiang<br />Huang.
         </Heading>
       </SlideFade>
 
@@ -79,12 +88,19 @@ export default function Introduction({ introduction }) {
           whiteSpace="pre-wrap"
         >
           <Box as="span" color="displayColor">
-            Software Engineer.
-          </Box>{' '}
-          A self-taught developer{' '}
+            <TypingEffect 
+              words={roles}
+              typingSpeed={70}
+              deletingSpeed={50}
+              delayBetweenWords={1800}
+            />
+          </Box>
+          <br />
+          Driving better information retrieval and search experiences
+          {' '}
           {isLargerThan800
-            ? 'with an\ninterest in Computer Science.'
-            : 'with an interest in Computer Science.'}
+            ? '\nwith hands-on AI expertise.'
+            : 'with hands-on AI expertise.'}
         </Heading>
       </SlideFade>
 
@@ -93,27 +109,23 @@ export default function Introduction({ introduction }) {
         transition={{ enter: { duration: 0.4, delay: 0.9 } }}
         in={true}
       >
-        <Text color="textSecondary" fontSize="display3">
-          {introduction[0].fields.emoji} {introduction[0].fields.description}
-          <br />
+        <Text color="textPrimary" fontSize="display3">
           <Stack isInline spacing={1}>
-            <Box>{introduction[1].fields.emoji}</Box>
+            <Box>🎓</Box>
             <Box>
-              {introduction[1].fields.description}{' '}
-              {introduction[1].fields.companyUrl ? (
-                <Link
-                  href={introduction[1].fields.companyUrl}
-                  isExternal
-                  onClick={() => handleClick('Introduction_companyUrl')}
-                  rel="noreferrer"
-                >
-                  {introduction[1].fields.company}
-                </Link>
-              ) : (
-                <Box as="span" color="button1">
-                  {introduction[1].fields.company}
-                </Box>
-              )}
+              Master's in Library and Information Science at UW
+            </Box>
+          </Stack>
+          <Stack isInline spacing={1}>
+            <Box>📚</Box>
+            <Box>
+              Linked Data Specialist at UW Libraries
+            </Box>
+          </Stack>
+          <Stack isInline spacing={1}>
+            <Box>🔬</Box>
+            <Box>
+              Research Assistant at UW eScience Institute
             </Box>
           </Stack>
         </Text>
@@ -124,7 +136,7 @@ export default function Introduction({ introduction }) {
         in={true}
       >
         <Stack isInline spacing={4}>
-          <Link href="https://github.com/abdulrcs" isExternal>
+          <Link href="https://github.com/hinxcode" isExternal>
             <Button
               pos="static"
               color="white"
@@ -135,7 +147,7 @@ export default function Introduction({ introduction }) {
               Github
             </Button>
           </Link>
-          <Link href="https://linkedin.com/in/abdulrcs" isExternal>
+          <Link href="https://linkedin.com/in/ying-hsiang-huang" isExternal>
             <Button
               pos="static"
               color="white"
@@ -146,7 +158,7 @@ export default function Introduction({ introduction }) {
               LinkedIn
             </Button>
           </Link>
-          <Link href="mailto:abdulrcs1@gmail.com" isExternal>
+          <Link href="mailto:hinxcode@gmail.com" isExternal>
             <Button
               pos="static"
               color="white"

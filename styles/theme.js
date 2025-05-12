@@ -84,7 +84,7 @@ const overrides = {
     //   '6xl': fluidType(24, 48),
     //   '7xl': fluidType(32, 64),
     //   '8xl': fluidType(36, 72),
-    display: fluidType(80, 144),
+    display: fluidType(80, 122),
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
   },

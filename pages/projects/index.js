@@ -1,12 +1,11 @@
 import { useState } from 'react'
+import { FaSearch } from 'react-icons/fa'
+import Head from 'next/head'
 import { Stack, Heading, Text, SimpleGrid, Divider } from '@chakra-ui/react'
-
+import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
+import { GithubBlog } from '@rena.to/github-blog'
 import Cards from '../../components/Card'
 import Container from '../../components/Container'
-import Head from 'next/head'
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import { FaSearch } from 'react-icons/fa'
-import { GithubBlog } from '@rena.to/github-blog'
 
 export default function Projects({ projects }) {
   const [query, setQuery] = useState('')
@@ -18,45 +17,7 @@ export default function Projects({ projects }) {
     <>
       <Container>
         <Head>
-          <title>Abdul Rahman - Software Engineer</title>
-          <meta content="Abdul Rahman - Software Engineer" name="title" />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            name="description"
-          />
-
-          <meta content="website" property="og:type" />
-          <meta content="https://abdulrahman.id/projects" property="og:url" />
-          <meta
-            content="Abdul Rahman - Software Engineer"
-            property="og:title"
-          />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            property="og:description"
-          />
-          <meta
-            content="https://imagizer.imageshack.com/a/img923/3917/IFUVhm.png"
-            property="og:image"
-          />
-
-          <meta content="summary_large_image" property="twitter:card" />
-          <meta
-            content="https://abdulrahman.id/projects"
-            property="twitter:url"
-          />
-          <meta
-            content="Abdul Rahman - Software Engineer"
-            property="twitter:title"
-          />
-          <meta
-            content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
-            property="twitter:description"
-          />
-          <meta
-            content="https://imagizer.imageshack.com/a/img923/3917/IFUVhm.png"
-            property="twitter:image"
-          />
+        <title>YH Huang's Portfolio</title>
         </Head>
         <Stack
           justifyContent="center"
@@ -68,10 +29,6 @@ export default function Projects({ projects }) {
             <Heading color="displayColor" fontSize={{ base: '4xl', md: '6xl' }}>
               Projects
             </Heading>
-            <Text fontSize={{ base: '14px', md: '16px' }}>
-              I love building projects and practice my engineering skills,
-              here's an archive of things that I've worked on.
-            </Text>
             <InputGroup maxW="400px">
               <InputRightElement pointerEvents="none">
                 <FaSearch />
@@ -95,9 +52,6 @@ export default function Projects({ projects }) {
                   key={project.title}
                   desc={project.frontmatter.summary}
                   imageURL={project.frontmatter.image}
-                  tag={project.frontmatter.techStack
-                    .split(',')
-                    .map((e) => e.trim())}
                   title={project.title}
                   slug={project.frontmatter.slug}
                 />
@@ -111,16 +65,16 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'hinxcode/portfolio',
     token: process.env.GITHUB_TOKEN,
   })
   const projects = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'hinxcode',
       type: 'project',
       state: 'published',
     },
-    pager: { limit: 100, offset: 0 },
+    pager: { limit: 10, offset: 0 },
   })
 
   return {
