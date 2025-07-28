@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
-import { Stack } from '@chakra-ui/react'
+import { Stack, theme } from '@chakra-ui/react'
 
 const ProjectContainer = styled(Stack)`
   &&& {
+    padding-bottom: ${theme.space[8]};
     font-size: 16px;
     * {
       box-sizing: border-box;

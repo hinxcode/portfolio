@@ -10,7 +10,6 @@ import {
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { FaGithub, FaLink } from 'react-icons/fa'
 import ReactGA from 'react-ga4'
@@ -22,7 +21,6 @@ import MDXComponents from '../../components/MDXComponents'
 import ProjectContainer from '../../components/ProjectContainer'
 
 export default function Post({ metadata, publishedDate, source, toc }) {
-  const router = useRouter()
   const [activeId, setActiveId] = useState()
 
   useEffect(() => {

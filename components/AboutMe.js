@@ -70,7 +70,7 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Hey! I'm Ying Hsiang, an AI-driven ontologist with a strong foundation in software engineering and a passion for building knowledge-based solutions that drive real-world impact.
+              Hey! I'm Ying-Hsiang, a software engineer with a strong foundation in library science and over 6 years of experience building web applications and open-source tools. I'm passionate about the intersection of digital humanities and AI, with expertise in full-stack development and semantic web technologies.
               <br />
               <br />
               My journey began as a
