@@ -51,7 +51,7 @@ export default function Timeline() {
     {
       year: "2018",
       role: "Sr. Software Engineer / Team Lead",
-      company: "@SHOPLNIE",
+      company: "@SHOPLINE",
       description: "After 5 years as a software engineer in eCommerce industry, my tech journey ignited a deeper curiosity about how structured information can really enhance intelligent search and discovery. This passion ultimately inspired me to pursue a new direction in information science."
     },
     {
